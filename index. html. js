@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Resume</title>
+</head>
+<body>
+  <h1>My Resume</h1>
+  <div id="resume"></div>
+
+  <script>
+    // Resume stored as a JavaScript object
+    const resume = {
+      name: "R. Geetha",
+      email: "geethageetha13102007@gmail.com",
+      phone: "8072505525",
+      education: [
+        { degree: "B.Sc. Computer Science", school: "XYZ University", year: 2022 }
+      ],
+      skills: ["JavaScript", "HTML", "CSS"],
+      experience: [
+        { company: "ABC Corp", role: "Web Developer", years: "2022-2023" }
+      ]
+    };
+
+    // Display resume safely on the page
+    const resumeDiv = document.getElementById("resume");
+
+    function renderList(items, formatter) {
+      if (!items || items.length === 0) return "<li>Not available</li>";
+      return items.map(formatter).join("");
+    }
+
+    resumeDiv.innerHTML = `
+      <h2>${resume.name || "Name not provided"}</h2>
+      <p>Email: ${resume.email || "N/A"}</p>
+      <p>Phone: ${resume.phone || "N/A"}</p>
+      
+      <h3>Education</h3>
+      <ul>
+        ${renderList(resume.education, ed => `<li>${ed.degree} - ${ed.school} (${ed.year})</li>`)}
+      </ul>
+
+      <h3>Skills</h3>
+      <ul>
+        ${renderList(resume.skills, skill => `<li>${skill}</li>`)}
+      </ul>
+
+      <h3>Experience</h3>
+      <ul>
+        ${renderList(resume.experience, exp => `<li>${exp.role} at ${exp.company} (${exp.years})</li>`)}
+      </ul>
+    `;
+  </script>
+</body>
+</html>
