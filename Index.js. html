@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - R. Geetha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Email: geethageetha13102007@gmail.com | Phone: 8072505525</p>
+    </header>
+
+    <main>
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>A highly motivated and results-oriented professional with expertise in...</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job-entry">
+                <h3>Job Title at Company Name</h3>
+                <p>Dates (e.g., Jan 2020 - Present)</p>
+                <ul>
+                    <li>Responsibility 1</li>
+                    <li>Achievement 2</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Add more sections for Education, Skills, Projects, etc. -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
