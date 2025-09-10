@@ -1,0 +1,57 @@
+const resumeData = {
+    name: "R. Geetha",
+    contactInfo: "Email: your.email@example.com | LinkedIn: linkedin.com/in/yourprofile",
+    summary: "A brief, compelling summary of your professional goals and key qualifications.",
+    experience: [
+        {
+            title: "Software Developer",
+            company: "Tech Solutions Inc.",
+            dates: "Jan 2022 - Present",
+            description: "Developed and maintained web applications using JavaScript and various frameworks. Collaborated with cross-functional teams to deliver high-quality software."
+        },
+        {
+            title: "Junior Developer",
+            company: "Innovate Co.",
+            dates: "Jul 2020 - Dec 2021",
+            description: "Assisted in front-end development, bug fixing, and testing of web applications."
+        }
+    ],
+    education: [
+        {
+            degree: "Bachelor of Science in Computer Science",
+            university: "University of Technology",
+            dates: "2016 - 2020"
+        }
+    ],
+    skills: ["JavaScript", "HTML", "CSS", "React", "Node.js", "Git", "Problem Solving"]
+};
+
+document.getElementById('name').textContent = resumeData.name;
+document.getElementById('contact-info').textContent = resumeData.contactInfo;
+document.getElementById('summary').textContent = resumeData.summary;
+
+const experienceList = document.getElementById('experience-list');
+resumeData.experience.forEach(job => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <h3>${job.title} at ${job.company} (${job.dates})</h3>
+        <p>${job.description}</p>
+    `;
+    experienceList.appendChild(div);
+});
+
+const educationList = document.getElementById('education-list');
+resumeData.education.forEach(edu => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <h3>${edu.degree} - ${edu.university} (${edu.dates})</h3>
+    `;
+    educationList.appendChild(div);
+});
+
+const skillsList = document.getElementById('skills-list');
+resumeData.skills.forEach(skill => {
+    const li = document.createElement('li');
+    li.textContent = skill;
+    skillsList.appendChild(li);
+});
